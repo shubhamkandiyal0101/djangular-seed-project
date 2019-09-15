@@ -26,5 +26,19 @@
 
 
 ## IMPORTANT THINGS
-## -------------------
+
+### PORTS INFO:
+	- Backend Port must be *8000*, If backend server is not running in *Port 8000*, then Please change your backend server Port value in _*frontend/src/proxy.conf.json*_ file
+	- Frontend Port must be *4200*, If Frontend server is not running in *Port 4200*, then Please change your frontend server Port value in _*frontend/src/app/app.component.ts*_ file
+
+### PROJECT INFO:
+	- This is Seed Project of Django 1.11 and Angular 7
+	- I call backend with same frontent Port in Ajax Request in app.component.ts with the help of _*proxyConfig*_
+	- I modify  *frontend/package.json* start command to Config proxyConfig, thats why I am using *npm start* instead of *ng serve*
+
+### HOW TO CALL BACKEND DJANGO FUNCTION VIA ANGULAR FRONTEND:
+	- All the UI and Routing will be used by Angular 7. Its means we use Angular Routing and we dont use Django Template (Jinja) Approach.
+	-  We just use Backend Django as API. Like we just call Django as API via endpoint which might be like Post Request on */signup*, */login* and etc.
+	- We call *localhost:4200/api/{DjangoFunctionURL}* (e.g, POST request on *localhost:4200/api/signup* with Data). Its automatically forward request to *localhost:8000/signup* and send back response to Frontend. Its all be done with the help of *proxyConfig*
+
 
