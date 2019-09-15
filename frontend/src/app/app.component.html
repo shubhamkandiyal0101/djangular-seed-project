@@ -1,0 +1,36 @@
+<form>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <label>Username</label>
+      </td>
+      <td>
+        <input type="text" placeholder="Choose unique Username" #username>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Email</label>
+      </td>
+      <td>
+        <input type="email" placeholder="Please provide your Email" #email>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Password</label>
+      </td>
+      <td>
+        <input type="password" placeholder="Please choose a Secure Password" #password>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<input type="button" value="Submit" (click)="saveUser(username.value, email.value, password.value)">
+  
+</form>
+
+<router-outlet></router-outlet>
